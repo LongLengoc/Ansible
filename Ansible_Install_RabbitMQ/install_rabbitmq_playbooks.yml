@@ -1,8 +1,7 @@
 - 
   name: Install rabbitmq
   hosts: localhost
-  remote_user: cape
-  become: yes
+
   tasks:
     - name: Import PackageCloud signing key
       command: wget -O - "https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey" | sudo apt-key add -
