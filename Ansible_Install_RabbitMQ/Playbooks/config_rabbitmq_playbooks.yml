@@ -1,8 +1,8 @@
 -
-  name: config rabbitmq
-  host: localhost
+  name: Config rabbitmq
+  hosts: localhost
 
-  task:
+  tasks:
     - name: Start the rabbitmq server
       systemd:
         name: rabbitmq-server
