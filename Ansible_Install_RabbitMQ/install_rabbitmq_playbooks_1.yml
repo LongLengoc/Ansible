@@ -11,10 +11,12 @@
     - name: Apt update
       apt:
         update_cache: yes
+      become: yes
 
     - name: Install prerequisites
       apt:
         name: curl, gnupg
+      become: yes
 
     - name: Add RabbitMQ signing key
       apt_key:
@@ -24,6 +26,7 @@
     - name: Install apt HTTPS transport
       apt:
         name: apt-transport-https
+      become: yes
     
     - name: Add Bintray repositories 
       command: sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list <<EOF
@@ -34,7 +37,9 @@
     - name: Update package
       apt:
         update_cache: yes
+      become: yes
 
     - name: Install rabbitmq-server and its dependencies
       apt:
         name: rabbitmq-server
+      become: yes
